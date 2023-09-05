@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html  html lang="fr-fr">    
+    <Head>
+        <meta charset=""utf-8 />
+
+        <title>Mon 1er Formulaire</title>
+        
+    </Head>
+
+    <body>
+        <h1>Formulaire d'inscription</h1>
+        <h2>Votre compte configuré en 2 minutes</h2>
+        <form action="" method="get">
+            <fieldset style="background:#e1eff2;">
+            <legend style="padding:20px 0; font-size:20px;">Etat Civil</legend>
+            <div>
+                
+                <label for="nomUtilisateur">Nom:</label>
+                <input type="text" id="nom_utilisateur" name="nom"/>
+            </div>
+            <div>
+                <label for="prenomUtilisateur">Prenom:</label>
+                <input type="text" id="prenomUtilisateur" name="prenom">
+            </div>
+            <div>
+                <label for="dateNaissance">Date de Naissance</label>
+                <input type="date" id="dateNaissance" name="date">
+            </div>  
+            </fieldset>
+            <fieldset style="background:#e1eff2;">
+                <legend style="padding:20px 0; font-size:20px;">Informations de Contact</legend>
+            <div>
+                <label for="adresseEmail">Adresse Email</label>
+                <input type="email" id="adresseEmail" name="email">
+            </div>  
+            <div>
+                <label for="numeroTelephone">Téléphone</label>
+                <input for="tel" id="numeroTelephone" name="telephone">
+            </div>
+            </fieldset>
+            <fieldset style="background:#e1eff2;">
+                <legend style="padding:20px 0; font-size:20px;"></legend>
+            <div>
+                <input value="1" type="checkbox" name="validerConditions">
+                <label for="validerConditions">J'accepte les <a href="">conditions d'utilisation</a></label>                
+            </div>
+            <div>
+                <button type="submit">S'inscrire</button>
+            </div>
+            </fieldset>
+            
+
+        </form>
+    </body>
