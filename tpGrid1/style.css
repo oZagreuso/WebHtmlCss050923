@@ -1,0 +1,70 @@
+.box{
+    background-color: #BBCCFF;
+    padding: 20px;
+}
+
+.minibox{
+    background-color: white;
+    
+    padding-left: 40px;
+}
+
+body{
+    margin:0;
+    padding:0;
+    display: grid;
+    grid-template-columns: repat (8, 1fr);
+    grid-template-rows: minmax(120px,auto);
+    gap: 10px;
+}
+
+.logo{
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.commercial{
+    grid-column-start: 6;
+    grid-column-end: 8;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.nav{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 8;
+}
+
+.main{
+    background-color: #BBCCFF;
+    grid-column-start: 3;
+    grid-column-end: 8;
+    grid-row-start: 2;
+    grid-row-end: 7;
+  
+}
+
+.titre{
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    
+}
+
+.footer{
+    grid-column-start: 3;
+    grid-column-end: 8;
+    grid-row-start: 7;
+    grid-row-end: 8;
+}
+
+.mep{
+    padding-left: 100px;
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-auto-rows: minmax(80px,auto);
+    gap: 10px;
+}

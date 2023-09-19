@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Afficher Date et Heure</title>
+ 
+
+  <style>
+    .monlabel {
+      display: inline-block;
+      width: 100;
+      margin-bottom: 20px;
+    }
+
+    .monlabel:first-child {
+      margin-top: 50px;
+    }
+
+    fieldset {
+      background-color: #ccc;
+      width: 50%;
+    }
+
+    legend {
+      font-size: 1.5em;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      text-shadow: 5px 5px 8px #3d3c3c;
+     
+    }
+
+    input{
+      margin-top: 20px;
+      margin-bottom: 20px;
+      margin-left: 50px;
+      padding:2.5px;
+      border-radius: 10px;
+    }
+  </style>
+
+</head>
+
+
+<body>
+  <form action="#" method="get" enctype="text/plain">
+
+    <fieldset>
+      <legend>Heure et Date</legend>
+      <label for="madate">Date :</label>
+      <input type="text" name="madate"size="12" maxlength="10" />
+      <input type="button" value="afficher date" id="btnDate" name="btnDate"><br>
+      <label for="monheure">Heure</label>
+      <input type="text" name="monheure" size="12" maxlength="10" />
+      <input type="button" value="afficher heure" id="btnHeure" name="btnHeure"><br>
+    </fieldset>
+  </form>
+
+  <script src="script.js" defer></script>
+</body>
+
+</html>
