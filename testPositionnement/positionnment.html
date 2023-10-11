@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html lang="fr-fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="js/script.js" defer></script>
+    <script src="./js/script.js" defer></script>
     <title>Document</title>
 </head>
+
 <body>
     <h1>Saisissez un prénom et un âge</h1>
-    <label for="prenomUtilisateur">Prénom :</label>
-<input type="text" id="prenomUtilisateur" name="prenomUtilisateur" placeholder="Entrez votre prénom" required="true"/>
-<label for="ageUtilisateur">Age :</label>
-<input type="text" id="ageUtilisateur" name="ageUtilisateur" placeholder="Entrez votre âge" required="true"/>
+    <form action="#">
+        <label for="prenomUtilisateur">Prénom :</label>
+        <input type="text" id="prenomUtilisateur" name="prenomUtilisateur" placeholder="Entrez votre prénom"
+            required="true" />
+        <label for="ageUtilisateur">Age :</label>
+        <input type="number" id="ageUtilisateur" name="ageUtilisateur" value="0" min="0" max="120" required="true" />
+        <button type="button" id="valider">Valider</button>
+        <button type="reset">Vider</button>
+    </form>
+    <hr>
+    <div id="resultat"></div>
 </body>
+
 </html>
