@@ -22,38 +22,36 @@ h1 {
 }
 
 main {
-
     width: 100%;
-
 }
 
 #container {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: center;
-   border:0px;
+    align-items: center; 
+    border:0px;
 }
 
 article {
-
     margin-top: 20px;
     margin-right: 10px;
     margin-left:10px;
     border:2px solid #EDF0F1;
-
 }
 
 article div {
     padding:10px;
 }
+
 article img {
     width: 100%;
-
 }
+
 h2 {
     color:#E74B3B
 }
+
 section
 {
     width:80%;
