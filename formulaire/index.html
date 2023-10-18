@@ -11,44 +11,80 @@
     <h1>Un Formulaire</h1>
     <form action="" method="get">
         <div>
+            <!-- Nom format texte -->
             <label for="nomUtilisateur">Nom : </label>
             <input type="text" id="nomUtilisateur" name="nom">
         </div>
         <div>
+            <!-- Mot de passe format password -->
+            <label for="mdpUtilisateur">Mot de passe : </label>
+            <input type="password" id="mdpUtilisateur" name="mdp">
+        </div>
+        <!-- Age format number -->
+        <div>
             <label for="ageUtilisateur">Age : </label>
             <input type="number" id="ageUtilisateur" name="age">
         </div>
-        <!-- Date -->
+        <!-- Date format date-->
         <div>
             <label for="dateNaissance">Date naissance : </label>
             <input type="date" id="dateNaissance" name="date">
         </div>
-        <!-- Heure -->
+        <!-- Heure format time-->
         <div>
             <label for="heureNaissance">Heure naissance : </label>
             <input type="time" id="heureNaissance" name="heure">
         </div>
-        <!-- Date & Heure -->
+        <!-- Date & Heure format datetime-local-->
         <div>
             <label for="dateHeureNaissance">Date et Heure naissance : </label>
             <input type="datetime-local" id="dateHeureNaissance" name="dateHeure">
         </div>
-        <!-- Mail -->
+        <!-- Mail format email-->
         <div>
             <label for="mailUtilisateur">Email : </label>
             <input type="email" id="mailUtilisateur" name="mail">
         </div>
-        <!-- Téléphone -->
+        <!-- Téléphone format tel-->
         <div>
             <label for="telUtilisateur">Numéro de téléphone : </label>
             <input type="tel" id="telUtilisateur" name="tel">
         </div>
-        <!-- Check box -->
+        <!-- Check box : possibilité de cocher et décocher plusieurs cases-->
         <div>
             <input type="checkbox" name="accepter">
+            <input type="checkbox" name="accepter">
+            <input type="checkbox" name="accepter">
         </div>
-        <!-- Radio  -->
-        <input type="radio" name="validation">
+        <!-- Radio : on ne peut que cocher une seule case sans pouvoir décocher -->
+        <div>
+            <input type="radio" name="validation">
+            <input type="radio" name="validation">
+            <input type="radio" name="validation">
+        </div>
+        <div>
+            <!-- Zone de texte pour l'utilisateur : textarea -->
+            <textarea rows="15" cols="55"></textarea>
+        </div>
+        <div>
+            <!-- Choix multiples : select + option -->
+            <select>
+                <option>Choix 1</option>
+                <option>Choix 2</option>
+                <option>Choix 3</option>
+            </select>
+        </div>
+        <div>
+            <!-- Choix avec aide à la saisie : datalist + input + option -->
+            <datalist id="data">
+                <option>Choix 1</option>
+                <option>Choix 2</option>
+                <option>Choix 3</option>
+            </datalist>
+            <input list="data">
+        </div>
+
+
         <div>
             <button type="submit">Valider</button>
         </div>
