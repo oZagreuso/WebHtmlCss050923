@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Un Formulaire</h1>
+    <form action="" method="get">
+        <div>
+            <label for="nomUtilisateur">Nom : </label>
+            <input type="text" id="nomUtilisateur" name="nom">
+        </div>
+        <div>
+            <label for="ageUtilisateur">Age : </label>
+            <input type="number" id="ageUtilisateur" name="age">
+        </div>
+        <!-- Date -->
+        <div>
+            <label for="dateNaissance">Date naissance : </label>
+            <input type="date" id="dateNaissance" name="date">
+        </div>
+        <!-- Heure -->
+        <div>
+            <label for="heureNaissance">Heure naissance : </label>
+            <input type="time" id="heureNaissance" name="heure">
+        </div>
+        <!-- Date & Heure -->
+        <div>
+            <label for="dateHeureNaissance">Date et Heure naissance : </label>
+            <input type="datetime-local" id="dateHeureNaissance" name="dateHeure">
+        </div>
+        <!-- Mail -->
+        <div>
+            <label for="mailUtilisateur">Email : </label>
+            <input type="email" id="mailUtilisateur" name="mail">
+        </div>
+        <!-- Téléphone -->
+        <div>
+            <label for="telUtilisateur">Numéro de téléphone : </label>
+            <input type="tel" id="telUtilisateur" name="tel">
+        </div>
+        <!-- Check box -->
+        <div>
+            <input type="checkbox" name="accepter">
+        </div>
+        <!-- Radio  -->
+        <input type="radio" name="validation">
+        <div>
+            <button type="submit">Valider</button>
+        </div>
+    </form>
+
+</body>
+
+</html>
