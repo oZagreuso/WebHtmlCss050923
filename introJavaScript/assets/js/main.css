@@ -2,6 +2,13 @@
     box-sizing: border-box;
 }
 
+:root {
+    /* :root est un psuedo sélecteur, on l'utilise ici pour déclarer des variables pour les couleurs */
+    --couleur-primaire : blue;
+    --couleur-secondaire : green;
+    --couleur-tertiaire : beige;
+}
+
 /* box-sizing: border box; <= taille box : bordure et padding compris  */
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -22,21 +29,22 @@ main {
 }
 
 .affichage input {
-    border: solid blue 1px;
+    border: solid var(--couleur-primaire) 1px;
+    /*on utilise la variable couleur bleu déclarée grâce à :root pour remplacer color: blue */
 }
 
 input,
 button,
 main {
-    border: solid blue 1px;
+    border: solid var(--couleur-primaire) 1px;
 }
 
 button {
-    color: blue;
+    color: var(--couleur-primaire);
 }
 
 .bleuGras {
-    color: blue;
+    color: var(--couleur-primaire);
     font-weight: bold;
     /* font-weight: bold <= mettre en GRAS */
 }
