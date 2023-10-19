@@ -7,18 +7,32 @@ const divResultat = document.getElementById('resultat');
 
 // EVENEMENTS
 
-btnValider.addEventListener('click', ()=> {
-    console.log('OK!!!!');
+btnValider.addEventListener('click', () => {
+    // console.log('OK!!!!'); // <= test click OK
+    if(agePrenomValider()) { // <= on test si la fonction() agePrenomValider est valide
+        console.log('Valider est OK');
+    }
+    else {
+        console.log('Valider != OK');
+    }
 });
 
 
 // FONCTIONS
 
 function agePrenomValider() {
-    let prenom = inputPrenom.value;
+    // On déclare les variables via les constantes et non par getElemenById par soucis de performance
+    let prenom = inputPrenom.value.trim(); // on utilise la fonction trim() pour supprimer les premiers et derniers espaces et les caractères de fin de ligne
     let age = inputAge.value;
+    if (prenom.length > 0 && age > 0) {
+        // utilisation de length : bonne pratique après avoir fait un trim() pour vérifier que la longueur du prénom n'est pas nulle
+        return true;
+    }
+    else {
+        return false;
+    }
+    // !!! On peut compacter le code de la condition : return(prenom.length != '' && age > 0);
 }
-
 
 
 
