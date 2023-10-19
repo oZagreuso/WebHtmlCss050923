@@ -1,0 +1,28 @@
+* {
+     box-sizing: border-box; 
+}
+    /* box-sizing: border box; <= taille box : bordure et padding compris  */
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;  
+    display: flex;  
+    justify-content: center;     
+    /* justify-content: center; <= alignement horizontal */
+}
+
+main {    
+    width: 800px; 
+padding-left: 20px;
+}
+    /* width <= largeur */
+
+.affichage {
+    padding-left: 15px;
+}
+
+.affichage input {
+    border: solid blue 1px; 
+}
+
+input, button, main {
+    border: solid blue 1px;
+}
