@@ -13,27 +13,28 @@
     <main>
         <h1>Saisissez un prénom et un âge</h1>
         <form action="#">
-            <div id="affichagePrenom" class="affichage">
+            <span id="affichagePrenom" class="affichage"> 
                 <!-- Prénom de l'utilisateur en format texte -->
+                <!-- on utilise span pour inligne et div pour block -->
                 <label for="prenomUtilisateur">Prénom : </label>
                 <input type="text" id="prenomUtilisateur" name="prenom" value="">
-            </div>
-            <div id="affichageAge" class="affichage">
+            </span>
+            <span id="affichageAge" class="affichage">
                 <!-- Age de l'utilisateur en format number -->
                 <label for="ageUtilisateur">Age : </label>
                 <input type="number" id="ageUtilisateur" name="age" value="0" min="0" max="200">
-            </div>
-            <div id="boutonValider" class="affichage">
+            </span>
+            <span id="boutonValider" class="affichage">
                 <!-- Bouton type bouton -->
                 <button type="button" id="valider">Valider</button>
-            </div>
-            <div id="boutonReset" class="affichage">
+            </span>
+            <span id="boutonReset" class="affichage">
                 <!-- Bouton type reset -->
                 <button type="reset">Effacer</button>
-            </div>
+            </span>
         </form>
         <hr>
-        <div id="resultat"></div>
+        <span id="resultat"></span>
     </main>
 </body>
 

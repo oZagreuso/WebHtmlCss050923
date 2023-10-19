@@ -13,13 +13,13 @@ const ageRetraite = 64;
 btnValider.addEventListener('click', () => {
     // console.log('OK!!!!'); // <= test click OK
     if (agePrenomOk()) {
-        divResultat.innerHTML = `Bonjour ${inputPrenom.value}, votre âge est de : ${inputAge.value}`; // Utilisation de chaines litérales à la place de concaténer
+        divResultat.innerHTML = `Bonjour <span class="bleuGras">${inputPrenom.value}</span>, votre âge est de : <span>${inputAge.value}</span>`; // Utilisation de chaines litérales à la place de concaténer
         // console.log('Valider est OK'); // <= on test si la fonction() agePrenomValider est valide
         if (estMajeur()) {
-            divResultat.innerHTML += '<p> Vous êtes majeur.</p>' // on utilise += pour concatener l'affichage de l'age et le statut "majorité"
+            divResultat.innerHTML += '<p> Vous êtes <span class="bleuGras">majeur.</span></p>' // on utilise += pour concatener l'affichage de l'age et le statut "majorité"
         }
         else {
-            divResultat.innerHTML += ' <p> Vous êtes mineur.</p>' // utilisation de la balise <p> pour les retours à la ligne, ATTENTION seulement valable en innerHTML
+            divResultat.innerHTML += ' <p> Vous êtes <span class="bleuGras">mineur.</span></p>' // utilisation de la balise <p> pour les retours à la ligne, ATTENTION seulement valable en innerHTML
         }
         // on injecte l'état retraite
         divResultat.innerHTML += statutRetraite();
@@ -57,11 +57,11 @@ function statutRetraite() {
     let resteAnnees;
     if (age > ageRetraite) {
         resteAnnees = age - ageRetraite;
-        return ' Vous êtes retraité depuis ' + resteAnnees + ' années.'
+        return ' Vous êtes retraité depuis <span class="bleuGras">' + resteAnnees + '</span> années.'
     }
     else if (age < ageRetraite) {
         resteAnnees = ageRetraite - age;
-        return ' Il vous reste ' + resteAnnees + ' année(s) avant la retraite!' // concaténation basique
+        return ' Il vous reste <span class="bleuGras">' + resteAnnees + ' </span> année(s) avant la retraite!' // concaténation basique
     }
     else {
         return ' Vous prenez votre retraite cette année!'
