@@ -11,21 +11,21 @@
 <body>
     <h1>Saisissez un prénom et un âge</h1>
     <form action="#">
-        <div>
+        <div id="affichagePrenom">
             <!-- Prénom de l'utilisateur en format texte -->
             <label for="prenomUtilisateur">Prénom : </label>
             <input type="text" id="prenomUtilisateur" name="prenom" value="">
         </div>
-        <div>
+        <div id="affichageAge">
             <!-- Age de l'utilisateur en format number -->
             <label for="ageUtilisateur">Age : </label>
             <input type="number" id="ageUtilisateur" name="age" value="0" min="0" max="200">
         </div>
-        <div>
+        <div id="boutonValider">
             <!-- Bouton type bouton -->
             <button type="button" id="valider">Valider</button>
         </div>
-        <div>
+        <div id="boutonReset">
             <!-- Bouton type reset -->
             <button type="reset">Effacer</button>
         </div>

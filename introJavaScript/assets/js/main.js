@@ -8,7 +8,7 @@ const ageRetraite = 64;
 
 // console.log(inputPrenom); <= test retour valeur du prénom
 
-// EVENEMENTS -----------------------------------------------------
+// EVENEMENTS (QUE DE L'AFFICHAGE) ------------------------------------
 
 btnValider.addEventListener('click', () => {
     // console.log('OK!!!!'); // <= test click OK
@@ -16,22 +16,22 @@ btnValider.addEventListener('click', () => {
         divResultat.innerHTML = `Bonjour ${inputPrenom.value}, votre âge est de : ${inputAge.value}`; // Utilisation de chaines litérales à la place de concaténer
         // console.log('Valider est OK'); // <= on test si la fonction() agePrenomValider est valide
         if (estMajeur()) {
-            divResultat.innerHTML += ' Vous êtes majeur.' // on utilise += pour concatener l'affichage de l'age et le statut "majorité"
+            divResultat.innerHTML += '<p> Vous êtes majeur.</p>' // on utilise += pour concatener l'affichage de l'age et le statut "majorité"
         }
         else {
-            divResultat.innerHTML += ' Vous êtes mineur.'
+            divResultat.innerHTML += ' <p> Vous êtes mineur.</p>' // utilisation de la balise <p> pour les retours à la ligne, ATTENTION seulement valable en innerHTML
         }
         // on injecte l'état retraite
         divResultat.innerHTML += statutRetraite();
 
     }
     else {
-        divResultat.innerHTML = 'Compléter le fromulaire!';
+        divResultat.innerHTML = '<p>Compléter le fromulaire!</p>';
         // console.log('Valider PAS OK'); // <= on test si la fonction() agePrenomValider est invalide
     }
 });
 
-// FONCTIONS -------------------------------------------------------
+// FONCTIONS ----------------------------------------------------------
 
 function agePrenomOk() {
     // On déclare les variables via les constantes et non par getElemenById par soucis de performance
