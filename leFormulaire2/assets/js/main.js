@@ -1,27 +1,36 @@
-// VARIABES --------------------------------------------------------------
+// IMPORTATIONS
+
+import { MaDate } from "./maDate.js";
+import { SigneAstro } from "./SigneAstro.js";
+
+// VARIABLES --------------------------------------------------------------
 
 /**
- * @var {HTLElement} inputDateNaissance 
+ * @var {HTMLElement} inputDateNaissance 
  */
 const inputDateNaissance = document.getElementById('dateNaissance');
 const boutonCalculer = document.getElementById('btnCalculer');
 const divResultatDate = document.getElementById('resultatDate');
-const divResultatIntervalle = document.getElementById('resultatIntervalle')
+const divResultatIntervalle = document.getElementById('resultatIntervalle');
+const divResultatSigne = document.getElementById('resultatSigne');
+
 
 // EVENEMENTS -------------------------------------------------------------
 
 boutonCalculer.addEventListener('click', () => {
     let dateNaiss = new Date(inputDateNaissance.value);
-    if (estValide(dateNaiss)) {
+    let maDate = new MaDate(dateNaiss);
+    let signeAstro = new SigneAstro(dateNaiss);
+    if (maDate.estValide()) {
         divResultatDate.innerHTML = 'Vous êtes née le ';
         divResultatDate.innerHTML += dateNaiss.toLocaleDateString('fr');
         divResultatDate.innerHTML += ' à ';
         divResultatDate.innerHTML += dateNaiss.toLocaleTimeString('fr');
-        divResultatIntervalle.innerHTML += " il s'est ecoulé " + intervalleDates(dateNaiss) + 'depuis votre naissance.';
-        
+        divResultatIntervalle.innerHTML += " il s'est ecoulé " + maDate.intervalleDates() + ' ans depuis votre naissance.';  
+        divResultatSigne.innerHTML += 'Votre signe astrologique est : ' + signeAstro.calculerSigne();   
     }
     else {
-        divResultatDate.innerHTML = 'Date invalide, veuillez resaisir une date'
+        divResultatDate.innerHTML = 'Date invalide, veuillez saisir une nouvelle date';
     }
 })
 
@@ -35,7 +44,7 @@ boutonCalculer.addEventListener('click', () => {
 
 // <= doc block => documentation de la fonction, entre paranthèses on met le type attendu
 
-function estValide(_date) {
+/*function estValide(_date) {
 
     if (!(_date instanceof Date)) {
         // codage en défensif <= on déclenche une erreure pour savoir si la date est bien de type date
@@ -44,7 +53,7 @@ function estValide(_date) {
 
     let datePresent = new Date();
     return datePresent > _date;
-}
+}*/
 
 /**
  * calculer l'intervalle entre la date en paramètre et celle d'aujourd'hui
@@ -52,17 +61,15 @@ function estValide(_date) {
  * @return {Number} entre la date du jour et la date saisie, en années
  */
 
-function intervalleDates(dateAComparer) {
+/*function intervalleDates(dateAComparer) {
     if (!(dateAComparer instanceof Date)) {
         throw new Error("Saisie Invalide");
     }
-
     let datePresent = new Date();
     let diffDates = datePresent - dateAComparer;
     return parseInt(diffDates/(1000*3600*24*365));    
-    
-
-}
+    //console.log(diffDates);
+}*/
 
 // TESTS
 
