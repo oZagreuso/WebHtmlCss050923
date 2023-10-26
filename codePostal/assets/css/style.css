@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+}
+
+table {
+
+}
+
+th {
+    background-color: cadetblue;
+}
+
+tbody tr:nth-child(even) {
+    /* even <= PAIR */
+    background-color: coral;
+}
+
+tbody tr:nth-child(odd) {
+    /* even <= IMPPAIR */
+    background-color: aquamarine;
+}
