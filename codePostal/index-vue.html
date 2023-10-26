@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html lang="fr-fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../codePostal/assets/css/style.css">
-    <script src="./assets/js/main.js" type="module"></script>
-    <title>Mon Code Postal</title>
+    <script src="./assets/js/vue.global.js"></script>
+    <script src="./assets/js/main-vue.js" type="module"></script>
+    <title>Mon Code Postal en vue-js</title>
 </head>
 
 <body>
     <main>
-        <h1>Recherche de villes et de codes postaux</h1>
-        <label for="inputSearch">Ville / Code Postal</label>
-        <input type="search" id="inputSearch" list="zipList" placeholder="Entrez un CP ou une ville">
-        <button id="btnValid">Valider</button>
-        <datalist></datalist>
-        <div>
-            
+        <div id="appCP">
+            <h1>Recherche de villes et de codes postaux en vue-js</h1>
+            <label for="inputSearch">Ville / Code Postal</label>
+            <input type="search" list="zipList" v-model="zipCode" placeholder="Entrez un CP ou une ville">
+            <button v-on:click="validClick">Valider</button>
+            <datalist id="zipList">
+                <option v-for="zipCode of zipCodes" v-bind:value="zipCode.codePostal">{{ zipCode.nomCommune }}</option>
+            </datalist>
+            <div>
+                <p v-for="city of result">Nom de la ville {{ city.nomCommune }}. Code Postal {{ city.codePostal }}</p>
+            </div>
         </div>
-       
+
     </main>
-    
+
 </body>
+
 </html>
