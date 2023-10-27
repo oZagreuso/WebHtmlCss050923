@@ -14,8 +14,33 @@
         <h1>Jeu de cartes</h1>
     </header>
     <main>
-        <table id="tableauCartes"></table>
-
+        <div id="cardApp">
+            <table>
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>name</th>
+                        <th>level</th>
+                        <th>description</th>
+                        <th>power</th>
+                        <th>attack</th>
+                        <th>armor</th>
+                        <th>damage</th>
+                        <th>mitigation</th>
+                        <th>played</th>
+                        <th>victory</th>
+                        <th>defeat</th>
+                        <th>draw</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="city of result">
+                        <td>{{ card.nomCommune }}</td>
+                        <td>{{ city.CodePostal }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </main>
 </body>
 

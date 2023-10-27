@@ -24,22 +24,22 @@
                 <p v-for="city of result">Nom de la ville {{ city.nomCommune }}. Code Postal {{ city.codePostal }}</p>
             </div>
             <div v-else>Aucun Résultat!!!</div>
-                <!-- TABLEAU CP / VILLES -->
+            <!-- TABLEAU CP / VILLES -->
             <div v-if="result.length > 0"></div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Nom Commune</th>
-                            <th>Code Postal</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr v-for="city of result">
-                            <td>{{ city.nomCommune }}</td>
-                            <td>{{ city.CodePostal }}</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nom Commune</th>
+                        <th>Code Postal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="city of result">
+                        <td>{{ city.nomCommune }}</td>
+                        <td>{{ city.CodePostal }}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </main>
 </body>
