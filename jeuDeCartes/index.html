@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Le jeu de cartes</title>
-    </link>
+    <link rel="stylesheet" href="./css/style.css"></link>
     <script src="./js/main.js" type="module"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js" type="module"></script>    
 </head>
 
 <body>
@@ -14,33 +15,7 @@
         <h1>Jeu de cartes</h1>
     </header>
     <main>
-        <div id="cardApp">
-            <table>
-                <thead>
-                    <tr>
-                        <th>id</th>
-                        <th>name</th>
-                        <th>level</th>
-                        <th>description</th>
-                        <th>power</th>
-                        <th>attack</th>
-                        <th>armor</th>
-                        <th>damage</th>
-                        <th>mitigation</th>
-                        <th>played</th>
-                        <th>victory</th>
-                        <th>defeat</th>
-                        <th>draw</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="city of result">
-                        <td>{{ card.nomCommune }}</td>
-                        <td>{{ city.CodePostal }}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+       
     </main>
 </body>
 

@@ -1,9 +1,8 @@
 class DataBase 
 {
-    static async fetchJson(url) {
-        let response = await fetch(url);
+    static async fetchJson(_url) {
+        let response = await fetch(_url);
         let json = await response.json();
-        console.log(json);
         return json;
     }
 }
