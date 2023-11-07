@@ -24,11 +24,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- <tr v-for=""> -->
-                        <!-- <td>{{ nom.results }}</td> -->
-                        <!-- <td>{{ prenom.results }}</td> -->
-                        <!-- <td>{{ note.results }}</td> -->
-                    <!-- </tr> -->
+                    <tr v-for="student of students">
+                        <td>{{ student.lastName }}</td>
+                        <td>{{ student.firstName }}</td>
+                        <td>{{ student.grade }}</td>
+                    </tr>
                 </tbody>
             </table>
         </div>

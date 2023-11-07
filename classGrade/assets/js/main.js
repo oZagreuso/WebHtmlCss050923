@@ -1,4 +1,5 @@
 import { DataBase } from "./Database.js";
+import { Students } from "./Students.js";
 
 const apiUrl = './eval.json';
 console.log(apiUrl);
@@ -6,18 +7,28 @@ console.log(apiUrl);
 const { createApp } = Vue;
 
 const evalApp = {
+
     data() {
         return {
-            results:[]
+            students:[],
+            grades: []
         }
     },
+
     async mounted() { 
 
         const dB = await DataBase.fetchJson(apiUrl);
+
         for (const item of dB) {
-            console.log(item);
+            const student = new Students(item);
+            this.students.push(student);
         }        
+
+        for (const item of this.students) {
+            this.grades.push(item.grade);
+        }
     }
+
 }
 
 createApp(evalApp).mount('#appEval');
