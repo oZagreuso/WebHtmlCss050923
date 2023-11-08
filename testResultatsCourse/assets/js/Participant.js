@@ -2,6 +2,7 @@ class Participant
 {
     constructor(_participantFromJson) {
         this.time = _participantFromJson.temps;
+        this.country = _participantFromJson.pays;
         this.lastName = '';
         this.firstName = '';
         this.finalTime = this.setConvertedTime(_participantFromJson.temps);

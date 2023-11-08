@@ -3,6 +3,7 @@ class Students {
         Object.assign(this, _student);
         this.firstName = this.getFirstName(_student.fullname);
         this.lastName = this.getLastName(_student.fullname);
+        this.grade = this.sortGrades(_student.fullname);
     }
 
     getFirstName(_fullname) {
