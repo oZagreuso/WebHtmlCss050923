@@ -28,11 +28,9 @@ class Student
         if(myFullName[1].length < 2) {
             throw new Error('Le prénom est invalide');
         }
-
         
         this.lastName = myFullName[0];
         this.firstName = myFullName[1];
-
     }
 }
 

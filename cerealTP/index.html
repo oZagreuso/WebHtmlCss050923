@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr-fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +11,27 @@
 </head>
 
 <body>
-    <main id="appNutriments">
+    <header>
         <h1>Cereals</h1>
+        <fieldset>
+            <legend>Rechercher</legend>
+            <div class="containerSearch">
+                <label for="inputSearch">Nom de la céréale</label>
+                <input v-model="inputSearch" placeholder="Nom de la céréale" id="inputSearch">
+                <ul>
+                    <li v-for="cerealBrand of nutriTab">{{ cerealBrand.name }}</li>
+                </ul>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Filter</legend>
+            <div>
+
+            </div>
+        </fieldset>
+    </header>
+
+    <main id="appNutriments">
 
         <table>
             <thead>
@@ -30,24 +50,24 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
+                <tr v-for="cerealBrand of nutriTab">
+                    <td>{{ cerealBrand.id }}</td>
+                    <td>{{ cerealBrand.name }}</td>
+                    <td>{{ cerealBrand.calories }}</td>
+                    <td>{{ cerealBrand.proteins }}</td>
+                    <td>{{ cerealBrand.sodium }}</td>
+                    <td>{{ cerealBrand.fiber }}</td>
+                    <td>{{ cerealBrand.carbo }}</td>
+                    <td>{{ cerealBrand.sugars }}</td>
+                    <td>{{ cerealBrand.potass }}</td>
+                    <td>{{ cerealBrand.vitamins }}</td>
+                    <td>{{ cerealBrand.rating }}</td>
                 </tr>
             </tbody>
         </table>
 
+    </main>
 
-
-    </main>    
 </body>
+
 </html>
