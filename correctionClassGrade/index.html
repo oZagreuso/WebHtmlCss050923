@@ -11,13 +11,19 @@
 </head>
 
 <body>
-    <div id="app">
+    <main id="app">
         <h1>Résultat de l'évaluation</h1>
         <fieldset>
             <legend>Ajouter une note</legend>
-            <label for="">Nom prénom</label><input>
-            <label for="">Note</label><input>
-            <button>Ajouter</button>
+            <div>
+                <label for="studentName">Nom prénom</label>
+                <input id="studentName" v-model="studentName">
+            </div>
+            <div>
+                <label for="studentGrade">Note</label>
+                <input id="studentGrade" type="number" min="0" max="20" v-model="studentGrade">
+            </div>
+            <button @click="addStudent">Ajouter</button>
         </fieldset>
         <table>
             <thead>
@@ -48,7 +54,7 @@
             <li>Note éliminatoire : {{ minGrade }}</li>
         </ul>
 
-    </div>
+    </main>
 
 </body>
 
