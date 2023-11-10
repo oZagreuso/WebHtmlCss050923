@@ -17,16 +17,40 @@
             <legend>Rechercher</legend>
             <div class="containerSearch">
                 <label for="inputSearch">Nom de la céréale</label>
-                <input v-model="inputSearch" placeholder="Nom de la céréale" id="inputSearch">
-                <ul>
-                    <li v-for="cerealBrand of nutriTab">{{ cerealBrand.name }}</li>
-                </ul>
+                <input type="text" v-model="inputSearch" placeholder="Nom de la céréale" id="inputSearch">
+
             </div>
         </fieldset>
         <fieldset>
             <legend>Filter</legend>
-            <div>
-
+            <div class="nutriScoreFilter">
+                <fieldset>
+                    <legend>Nutriscore</legend>
+                        <input type="checkbox" name="A">
+                        <input type="checkbox" name="B">
+                        <input type="checkbox" name="C">
+                        <input type="checkbox" name="D">
+                        <input type="checkbox" name="E">
+                </fieldset>
+            </div>
+            <div clas="filterBy">
+                <fieldset>
+                    <legend>Catégories</legend>
+                    <select v-model="filterBy">
+                        <option value="">Tous</option>
+                        <option value="id">ID</option>
+                        <option value="name">Nom</option>
+                        <option value="calories">Calories</option>
+                        <option value="protein">Proteïnes</option>
+                        <option value="sodium">Sel</option>
+                        <option value="fiber">Fibres</option>
+                        <option value="carbo">Glucides</option>
+                        <option value="sugars">Sucre</option>
+                        <option value="potass">Potassium</option>
+                        <option value="vitamins">Vitamines</option>
+                        <option value="rating">Evaluation</option>
+                    </select>
+                </fieldset>
             </div>
         </fieldset>
     </header>
@@ -36,17 +60,17 @@
         <table>
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Calories</th>
-                    <th>Proteïnes</th>
-                    <th>Sel</th>
-                    <th>Fibres</th>
-                    <th>Glucides</th>
-                    <th>Sucre</th>
-                    <th>Potassium</th>
-                    <th>Vitamines</th>
-                    <th>Evaluation</th>
+                    <th @click="sortBrand">ID</th>
+                    <th @click="sortBrand">Name</th>
+                    <th @click="sortBrand">Calories</th>
+                    <th @click="sortBrand">Proteïnes</th>
+                    <th @click="sortBrand">Sel</th>
+                    <th @click="sortBrand">Fibres</th>
+                    <th @click="sortBrand">Glucides</th>
+                    <th @click="sortBrand">Sucre</th>
+                    <th @click="sortBrand">Potassium</th>
+                    <th @click="sortBrand">Vitamines</th>
+                    <th @click="sortBrand">Evaluation</th>
                 </tr>
             </thead>
             <tbody>
@@ -54,7 +78,7 @@
                     <td>{{ cerealBrand.id }}</td>
                     <td>{{ cerealBrand.name }}</td>
                     <td>{{ cerealBrand.calories }}</td>
-                    <td>{{ cerealBrand.proteins }}</td>
+                    <td>{{ cerealBrand.protein }}</td>
                     <td>{{ cerealBrand.sodium }}</td>
                     <td>{{ cerealBrand.fiber }}</td>
                     <td>{{ cerealBrand.carbo }}</td>
@@ -62,6 +86,7 @@
                     <td>{{ cerealBrand.potass }}</td>
                     <td>{{ cerealBrand.vitamins }}</td>
                     <td>{{ cerealBrand.rating }}</td>
+                    <!-- ICI surement mettre le bouton @click DELETE -->
                 </tr>
             </tbody>
         </table>
