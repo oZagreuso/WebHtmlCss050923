@@ -22,69 +22,42 @@ const app =
             console.log(this.nutriTab[i]);
         }
 
-       
+
 
     },
-    methods: {       
-        
-        sortBrand() {
-            if(this.asc === true) 
-            {
-            this.nutriTab.sort(((a, b) => a.id - b.id).reverse());
-            this.asc = false;
+    methods: {
+
+        sortBrand(event) {
+
+            let attribute = event.target.id;
+
+            let sortFunction = (a, b) => {
+                if (a[attribute] > b[attribute]) {
+                    return 1;
+                }
+                else if (a[attribute] < b[attribute]) {
+                    return -1;
+                } else {
+                    return 0;
+                }
             }
-            else {
-                this.nutriTab.sort(((a, b) => a.id - b.id));
-                this.asc = true;
-            }
+
+                this.nutriTab.sort(sortFunction);
+
+                if (this.asc === true) {
+                    this.nutriTab.sort(((a, b) => a.id - b.id).reverse());
+                    this.asc = false;
+                }
+                else {
+                    this.nutriTab.sort(((a, b) => a.id - b.id));
+                    this.asc = true;
+                }
+            
         }
 
-   
-  
-        /*
-        sortBrandId() {
-            this.nutriTab.sort((a, b) => a.id - b.id).reverse();
-        },
 
-        sortBrandName() {
-            this.nutriTab.sort((a, b) => a.id - b.id).reverse();
-        },
 
-        sortBrandCal() {
-            this.nutriTab.sort((a, b) => a.calories - b.calories).reverse();
-        },
 
-        sortBrandProt() {
-            this.nutriTab.sort((a, b) => a.protein - b.protein).reverse();
-        },
-
-        sortBrandSodium() {
-            this.nutriTab.sort((a, b) => a.sodium - b.sodium).reverse();
-        },
-
-        sortBrandFiber() {
-            this.nutriTab.sort((a, b) => a.fiber - b.fiber).reverse();
-        },
-
-        sortBrandCarb() {
-            this.nutriTab.sort((a, b) => a.carbo - b.carbo).reverse();
-        },
-
-        sortBrandSugars() {
-            this.nutriTab.sort((a, b) => a.sugars - b.sugars).reverse();
-        },
-
-        sortBrandPotass() {
-            this.nutriTab.sort((a, b) => a.potass - b.potass).reverse();
-        },
-
-        sortBrandVit() {
-            this.nutriTab.sort((a, b) => a.vitamins - b.vitamins).reverse();
-        },
-
-        sortBrandRating() {
-            this.nutriTab.sort((a, b) => a.rating - b.rating).reverse();
-        }*/
 
     }
 }
