@@ -26,8 +26,8 @@ const app =
 
         this.nutriTabBis = [...this.nutriTab];
         console.log(this.nutriTabBis);
+q
 
-   
     },
     methods: {
 
@@ -61,9 +61,10 @@ const app =
             this.nutriTabBis = this.nutriTab.filter(cerealBrand => cerealBrand.name.toLowerCase().includes((this.inputSearch.toLowerCase()).trim()));
         },
 
-        checkNs() {
-            this.nutriTabBis = this.nutriTab.filter(cerealBrand => cerealBrand.ns.includes(this.nutriCheck));
-        }
+        filterByNS() {
+            this.nutriTabBis = this.nutriTab.filter(cerealBrand => cerealBrand.ns.includes(this.filterByNS.value));
+        },
+
 
     }
 }

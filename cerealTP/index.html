@@ -27,15 +27,16 @@
                 <fieldset>
                     <legend>Nutriscore</legend>
                     <label>A</label>
-                    <input type="checkbox"  v-model="checkNs" @click="nutriCheck">
+                    <input type="checkbox"  v-model="filterByNS" value="A" @click="nutricheck">
                     <label>B</label>
-                    <input type="checkbox"  v-model="checkNs" @click="nutriCheck">
+                    <input type="checkbox"  v-model="filterByNS" value="B" @click="nutriCheck">
                     <label>C</label>
-                    <input type="checkbox"  v-model="checkNs" @click="nutriCheck">
+                    <input type="checkbox"  v-model="filterByNS" value="C" @click="nutriCheck">
                     <label>D</label>
-                    <input type="checkbox"  v-model="checkNs" @click="nutriCheck">
+                    <input type="checkbox"  v-model="filterByNS" value="D" @click="nutriCheck">
                     <label>E</label>
-                    <input type="checkbox"  v-model="checkNs" @click="nutriCheck">
+                    <input type="checkbox"  v-model="filterByNS" value="E" @click="nutriCheck">
+                    {{ filterByNS }}
                 </fieldset>
             </div>
             <div class="categories">
