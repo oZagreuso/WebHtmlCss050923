@@ -62,8 +62,8 @@ q
         },
 
         filterByNS() {
-            this.nutriTabBis = this.nutriTab.filter(cerealBrand => cerealBrand.ns.includes(this.filterByNS.value));
-        },
+            this.nutriTabBis = this.nutriTab.filter(cerealBrand => cerealBrand.ns.includes(this.inputNS));
+        }
 
 
     }
