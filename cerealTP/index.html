@@ -17,23 +17,28 @@
             <legend>Rechercher</legend>
             <div class="containerSearch">
                 <label for="inputSearch">Nom de la céréale</label>
-                <input type="text" v-model="inputSearch" placeholder="Nom de la céréale" id="inputSearch" @change="filteredBrand">
-
+                <input type="text" v-model="inputSearch" placeholder="Nom de la céréale" id="inputSearch"
+                    @change="filteredBrand">
             </div>
         </fieldset>
         <fieldset>
             <legend>Filter</legend>
-            <div class="nutriScoreFilter">
+            <div class="nutriScore">
                 <fieldset>
                     <legend>Nutriscore</legend>
-                        <input type="checkbox" name="A">
-                        <input type="checkbox" name="B">
-                        <input type="checkbox" name="C">
-                        <input type="checkbox" name="D">
-                        <input type="checkbox" name="E">
+                    A
+                    <input type="checkbox" name="A">
+                    B
+                    <input type="checkbox" name="B">
+                    C
+                    <input type="checkbox" name="C">
+                    D
+                    <input type="checkbox" name="D">
+                    E
+                    <input type="checkbox" name="E">
                 </fieldset>
             </div>
-            <div>
+            <div class="categories">
                 <fieldset>
                     <legend>Catégories</legend>
                     <select v-model="filterBy">
@@ -60,23 +65,23 @@
         <table>
             <thead>
                 <tr>
-                    <th @click="sortBrand">ID</th>
-                    <th @click="sortBrand">Name</th>
-                    <th @click="sortBrand">Calories</th>
-                    <th @click="sortBrand">Proteïnes</th>
-                    <th @click="sortBrand">Sel</th>
-                    <th @click="sortBrand">Fibres</th>
-                    <th @click="sortBrand">Glucides</th>
-                    <th @click="sortBrand">Sucre</th>
-                    <th @click="sortBrand">Potassium</th>
-                    <th @click="sortBrand">Vitamines</th>
-                    <th @click="sortBrand">Evaluation</th>
+                    <th id="id" @click="sortBrand">ID</th>
+                    <th id="name" @click="sortBrand">Name</th>
+                    <th id="calories" @click="sortBrand">Calories</th>
+                    <th id="protein" @click="sortBrand">Proteïnes</th>
+                    <th id="sodium" @click="sortBrand">Sel</th>
+                    <th id="fiber" @click="sortBrand">Fibres</th>
+                    <th id="carbo" @click="sortBrand">Glucides</th>
+                    <th id="sugar" @click="sortBrand">Sucre</th>
+                    <th id="potass" @click="sortBrand">Potassium</th>
+                    <th id="vitamins" @click="sortBrand">Vitamines</th>
+                    <th id="rating" @click="sortBrand">Evaluation</th>
                     <th>NS</th>
                     <th>DEL</th>
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="cerealBrand of nutriTab">
+                <tr v-for="cerealBrand of nutriTabBis">
                     <td>{{ cerealBrand.id }}</td>
                     <td>{{ cerealBrand.name }}</td>
                     <td>{{ cerealBrand.calories }}</td>

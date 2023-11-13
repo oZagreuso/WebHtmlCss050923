@@ -22,7 +22,7 @@ const app =
             // console.log(this.nutriTab[i]);
         }
 
-        this.nutriTabBis =[...this.nutriTab];
+        this.nutriTabBis = [...this.nutriTab];
         console.log(this.nutriTabBis);
 
     },
@@ -31,6 +31,7 @@ const app =
         sortBrand(event) {
 
             let attribute = event.target.id;
+            console.log(attribute);
 
             let sortFunction = (a, b) => {
                 if (a[attribute] > b[attribute]) {
@@ -43,22 +44,24 @@ const app =
                 }
             }
 
-            this.nutriTab.sort(sortFunction);
+            this.nutriTabBis.sort(sortFunction);
 
             if (this.asc === false) {
-                this.nutriTab.reverse();
+                this.nutriTabBis.reverse();
             }
-            else {
+            
                 this.asc = !this.asc;
-            }
+            
 
         },
 
         filteredBrand() {
-            this.nutriTab
-              }
+            this.nutriTabBis = this.nutriTabBis.filter((cerealBrand) => {
+                return cerealBrand.name.toLowerCase().includes(this.searchTerm.toLowerCase());
+            });
         }
     }
+}
 
 
 
