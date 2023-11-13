@@ -17,7 +17,7 @@
             <legend>Rechercher</legend>
             <div class="containerSearch">
                 <label for="inputSearch">Nom de la céréale</label>
-                <input type="text" v-model="inputSearch" placeholder="Nom de la céréale" id="inputSearch">
+                <input type="text" v-model="inputSearch" placeholder="Nom de la céréale" id="inputSearch" @change="filteredBrand">
 
             </div>
         </fieldset>
@@ -33,7 +33,7 @@
                         <input type="checkbox" name="E">
                 </fieldset>
             </div>
-            <div clas="filterBy">
+            <div>
                 <fieldset>
                     <legend>Catégories</legend>
                     <select v-model="filterBy">
@@ -71,6 +71,8 @@
                     <th @click="sortBrand">Potassium</th>
                     <th @click="sortBrand">Vitamines</th>
                     <th @click="sortBrand">Evaluation</th>
+                    <th>NS</th>
+                    <th>DEL</th>
                 </tr>
             </thead>
             <tbody>
@@ -86,6 +88,8 @@
                     <td>{{ cerealBrand.potass }}</td>
                     <td>{{ cerealBrand.vitamins }}</td>
                     <td>{{ cerealBrand.rating }}</td>
+                    <td>{{ cerealBrand.ns }}</td>
+                    <td></td>
                     <!-- ICI surement mettre le bouton @click DELETE -->
                 </tr>
             </tbody>

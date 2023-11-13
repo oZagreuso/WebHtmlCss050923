@@ -5,24 +5,25 @@ const app =
     data() {
         return {
             nutriTab: [],
+            nutriTabBis: [],
             asc: true,
+
         }
     },
     async mounted() {
         let response = await fetch('./cereals.json');
         this.nutriTab = await response.json();
         this.nutriTab = this.nutriTab.data;
-        this.nutriTab = nutriTabSource;
-        this.asc = true;
-
-        console.log('1', this.nutriTab);
+        // this.nutriTabBis = this.nutriTab;
+        // console.log('1', this.nutriTab);
 
         for (let i = 0; i < this.nutriTab.length; i++) {
             this.nutriTab[i] = new CerealBrand(this.nutriTab[i]);
-            console.log(this.nutriTab[i]);
+            // console.log(this.nutriTab[i]);
         }
 
-
+        this.nutriTabBis =[...this.nutriTab];
+        console.log(this.nutriTabBis);
 
     },
     methods: {
@@ -42,24 +43,23 @@ const app =
                 }
             }
 
-                this.nutriTab.sort(sortFunction);
+            this.nutriTab.sort(sortFunction);
 
-                if (this.asc === true) {
-                    this.nutriTab.sort(((a, b) => a.id - b.id).reverse());
-                    this.asc = false;
-                }
-                else {
-                    this.nutriTab.sort(((a, b) => a.id - b.id));
-                    this.asc = true;
-                }
-            
+            if (this.asc === false) {
+                this.nutriTab.reverse();
+            }
+            else {
+                this.asc = !this.asc;
+            }
+
+        },
+
+        filteredBrand() {
+            this.nutriTab
+              }
         }
-
-
-
-
-
     }
-}
+
+
 
 Vue.createApp(app).mount('#appNutriments');
