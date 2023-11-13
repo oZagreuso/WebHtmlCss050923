@@ -11,14 +11,15 @@
 </head>
 
 <body>
+    <div id="appNutriments">
     <header>
         <h1>Cereals</h1>
         <fieldset>
             <legend>Rechercher</legend>
             <div class="containerSearch">
                 <label for="inputSearch">Nom de la céréale</label>
-                <input type="text" v-model="inputSearch" placeholder="Nom de la céréale" id="inputSearch"
-                    @change="filteredBrand">
+                <input type="serach" v-model="inputSearch" placeholder="Nom de la céréale" id="inputSearch" @input="filteredBrand">  
+                <p>  {{ inputSearch }}</p>
             </div>
         </fieldset>
         <fieldset>
@@ -60,7 +61,7 @@
         </fieldset>
     </header>
 
-    <main id="appNutriments">
+    <main>
 
         <table>
             <thead>
@@ -101,7 +102,7 @@
         </table>
 
     </main>
-
+</div>
 </body>
 
 </html>

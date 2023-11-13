@@ -7,6 +7,7 @@ const app =
             nutriTab: [],
             nutriTabBis: [],
             asc: true,
+            inputSearch: ''
 
         }
     },
@@ -49,17 +50,18 @@ const app =
             if (this.asc === false) {
                 this.nutriTabBis.reverse();
             }
-            
-                this.asc = !this.asc;
-            
+
+            this.asc = !this.asc;
 
         },
 
         filteredBrand() {
-            this.nutriTabBis = this.nutriTabBis.filter((cerealBrand) => {
-                return cerealBrand.name.toLowerCase().includes(this.searchTerm.toLowerCase());
-            });
+            console.log('ok')
+
+
+            this.nutriTabBis = this.nutriTab.filter(cerealBrand => cerealBrand.name.toLowerCase().includes(this.inputSearch.toLowerCase()));
         }
+
     }
 }
 
