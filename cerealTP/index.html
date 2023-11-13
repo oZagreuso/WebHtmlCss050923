@@ -18,8 +18,7 @@
             <legend>Rechercher</legend>
             <div class="containerSearch">
                 <label for="inputSearch">Nom de la céréale</label>
-                <input type="serach" v-model="inputSearch" placeholder="Nom de la céréale" id="inputSearch" @input="filteredBrand">  
-                <p>  {{ inputSearch }}</p>
+                <input type="search" v-model="inputSearch" placeholder="Nom de la céréale" id="inputSearch" @input="filterBrand">  
             </div>
         </fieldset>
         <fieldset>
@@ -27,16 +26,16 @@
             <div class="nutriScore">
                 <fieldset>
                     <legend>Nutriscore</legend>
-                    A
-                    <input type="checkbox" name="A">
-                    B
-                    <input type="checkbox" name="B">
-                    C
-                    <input type="checkbox" name="C">
-                    D
-                    <input type="checkbox" name="D">
-                    E
-                    <input type="checkbox" name="E">
+                    <label>A</label>
+                    <input type="checkbox"  v-model="checkNs" @click="nutriCheck">
+                    <label>B</label>
+                    <input type="checkbox"  v-model="checkNs" @click="nutriCheck">
+                    <label>C</label>
+                    <input type="checkbox"  v-model="checkNs" @click="nutriCheck">
+                    <label>D</label>
+                    <input type="checkbox"  v-model="checkNs" @click="nutriCheck">
+                    <label>E</label>
+                    <input type="checkbox"  v-model="checkNs" @click="nutriCheck">
                 </fieldset>
             </div>
             <div class="categories">

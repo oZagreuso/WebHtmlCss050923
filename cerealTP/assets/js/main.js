@@ -7,7 +7,8 @@ const app =
             nutriTab: [],
             nutriTabBis: [],
             asc: true,
-            inputSearch: ''
+            inputSearch: '',
+            nutriCheck: []
 
         }
     },
@@ -26,6 +27,7 @@ const app =
         this.nutriTabBis = [...this.nutriTab];
         console.log(this.nutriTabBis);
 
+   
     },
     methods: {
 
@@ -55,11 +57,12 @@ const app =
 
         },
 
-        filteredBrand() {
-            console.log('ok')
+        filterBrand() {
+            this.nutriTabBis = this.nutriTab.filter(cerealBrand => cerealBrand.name.toLowerCase().includes((this.inputSearch.toLowerCase()).trim()));
+        },
 
-
-            this.nutriTabBis = this.nutriTab.filter(cerealBrand => cerealBrand.name.toLowerCase().includes(this.inputSearch.toLowerCase()));
+        checkNs() {
+            this.nutriTabBis = this.nutriTab.filter(cerealBrand => cerealBrand.ns.includes(this.nutriCheck));
         }
 
     }
