@@ -17,7 +17,6 @@
         <fieldset>
             <legend>Rechercher</legend>
             <div class="containerSearch">
-                <label for="inputSearch">Nom de la céréale</label>
                 <input type="search" v-model="inputSearch" placeholder="Nom de la céréale" id="inputSearch" @input="filterBrand">  
             </div>
         </fieldset>
@@ -27,34 +26,34 @@
                 <fieldset>
                     <legend>Nutriscore</legend>
                     <label for="nutriscoreA">A</label>
-                    <input type="checkbox"  v-model="filterByNS" value="A" @click="nutricheck">
+                    <input type="checkbox"  v-model="inputNS" value="A" @change="filterByNS">
                     <label for="nutriscoreB">B</label>
-                    <input type="checkbox"  v-model="filterByNS" value="B" @click="nutriCheck">
+                    <input type="checkbox"  v-model="inputNS" value="B" @change="filterByNS">
                     <label for="nutriscoreC">C</label>
-                    <input type="checkbox"  v-model="filterByNS" value="C" @click="nutriCheck">
+                    <input type="checkbox"  v-model="inputNS" value="C" @change="filterByNS">
                     <label for="nutriscoreD">D</label>
-                    <input type="checkbox"  v-model="filterByNS" value="D" @click="nutriCheck">
+                    <input type="checkbox"  v-model="inputNS" value="D" @change="filterByNS">
                     <label for="nutriscoreE">E</label>
-                    <input type="checkbox"  v-model="filterByNS" value="E" @click="nutriCheck">
-                    {{ filterByNS }}
+                    <input type="checkbox"  v-model="inputNS" value="E" @change="filterByNS">
+                    {{ inputNS }}
                 </fieldset>
             </div>
             <div class="categories">
                 <fieldset>
                     <legend>Catégories</legend>
-                    <select v-model="filterBy">
+                    <select>
                         <option value="">Tous</option>
-                        <option value="id">ID</option>
-                        <option value="name">Nom</option>
-                        <option value="calories">Calories</option>
-                        <option value="protein">Proteïnes</option>
-                        <option value="sodium">Sel</option>
-                        <option value="fiber">Fibres</option>
-                        <option value="carbo">Glucides</option>
-                        <option value="sugars">Sucre</option>
-                        <option value="potass">Potassium</option>
-                        <option value="vitamins">Vitamines</option>
-                        <option value="rating">Evaluation</option>
+                        <option value="id" v-model="inputNS" @change="filterByNS">ID</option>
+                        <option value="name" v-model="inputNS" @change="filterByNS">Nom</option>
+                        <option value="calories" v-model="inputNS" @change="filterByNS">Calories</option>
+                        <option value="protein" v-model="inputNS" @change="filterByNS">Proteïnes</option>
+                        <option value="sodium" v-model="inputNS" @change="filterByNS">Sel</option>
+                        <option value="fiber" v-model="inputNS" @change="filterByNS">Fibres</option>
+                        <option value="carbo" v-model="inputNS" @change="filterByNS">Glucides</option>
+                        <option value="sugars" v-model="inputNS" @change="filterByNS">Sucre</option>
+                        <option value="potass" v-model="inputNS" @change="filterByNS">Potassium</option>
+                        <option value="vitamins" v-model="inputNS" @change="filterByNS">Vitamines</option>
+                        <option value="rating" v-model="inputNS" @change="filterByNS">Evaluation</option>
                     </select>
                 </fieldset>
             </div>
@@ -67,7 +66,7 @@
             <thead>
                 <tr>
                     <th id="id" @click="sortBrand">ID</th>
-                    <th id="name" @click="sortBrand">Name</th>
+                    <th id="name" @click="sortBrand">Nom</th>
                     <th id="calories" @click="sortBrand">Calories</th>
                     <th id="protein" @click="sortBrand">Proteïnes</th>
                     <th id="sodium" @click="sortBrand">Sel</th>
@@ -95,7 +94,7 @@
                     <td>{{ cerealBrand.vitamins }}</td>
                     <td>{{ cerealBrand.rating }}</td>
                     <td>{{ cerealBrand.ns }}</td>
-                    <td></td>
+                    <td id="del" @click="deleteBrand">X</td>
                     <!-- ICI surement mettre le bouton @click DELETE -->
                 </tr>
             </tbody>
