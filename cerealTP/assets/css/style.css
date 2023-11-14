@@ -1,11 +1,108 @@
-
-table {
-    border: 1px solid red;
-    border-collapse: collapse;
-    margin: 30px 10px;
+:root {
+    --color1: #111;
+    --color2: #222;
+    --color3: #333;
+    --color4: #444;
+    --color5: #664;
+    --color6: white;
+    --color-txt: #FFFFFFCC;
+    --color-txt-id: yellow;
+    --color-title: yellowgreen;
+    --colorA: darkgreen;
+    --colorB: #009900CC;
+    --colorC: #CCCC00CC;
+    --colorD: #CC6600CC;
+    --colorE: #CC0000CC;
 }
 
-th, td {
-    border: 1px solid red;
-    padding: 3px;
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: var(--color1);
+    color: var(--color-txt);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    font-family:"Comic Sans MS", "Comic Sans", cursive;
+    margin-left: 200px;
+    color: var(--color-title);
+}
+
+.search {
+    background-color: var(--color3);
+    border-radius: 3px;
+}
+
+.search input {
+    border: 0;
+    background-color: var(--color3);
+    padding: 15px 0;
+    color: var(--color-txt);
+}
+
+.id {
+    color: var(--color-txt-id);
+    background-color: var(--color3);
+    text-align: center;
+}
+
+table {   
+    border-collapse: collapse;
+}
+
+#name, .name {
+    text-align: left;
+}
+
+th {
+    background-color: var(--color4);
+    color: var(--color-title);
+    text-transform: uppercase;
+}
+
+td {
+    text-align: center;
+}
+
+th, td {   
+    padding: 5px;
+}
+
+tr:hover {
+    background-color: var(--color5);
+}
+
+.A {
+    background-color: var(--colorA);
+}
+
+.B {
+    background-color: var(--colorB);
+}
+
+.C {
+    background-color: var(--colorC);
+}
+
+.D {
+    background-color: var(--colorD);
+}
+
+.E {
+    background-color: var(--colorE);
+}
+
+.A,.B,.C,.D,.E,#del {
+    text-align: center;
 }

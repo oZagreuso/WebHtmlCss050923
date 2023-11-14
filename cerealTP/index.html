@@ -12,96 +12,92 @@
 
 <body>
     <div id="appNutriments">
-    <header>
-        <h1>Cereals</h1>
-        <fieldset>
-            <legend>Rechercher</legend>
-            <div class="containerSearch">
-                <input type="search" v-model="inputSearch" placeholder="Nom de la céréale" id="inputSearch" @input="filterBrand">  
-            </div>
-        </fieldset>
-        <fieldset>
-            <legend>Filter</legend>
-            <div class="nutriScore">
-                <fieldset>
-                    <legend>Nutriscore</legend>
-                    <label for="nutriscoreA">A</label>
-                    <input type="checkbox"  v-model="inputNS" value="A" @change="filterByNS">
-                    <label for="nutriscoreB">B</label>
-                    <input type="checkbox"  v-model="inputNS" value="B" @change="filterByNS">
-                    <label for="nutriscoreC">C</label>
-                    <input type="checkbox"  v-model="inputNS" value="C" @change="filterByNS">
-                    <label for="nutriscoreD">D</label>
-                    <input type="checkbox"  v-model="inputNS" value="D" @change="filterByNS">
-                    <label for="nutriscoreE">E</label>
-                    <input type="checkbox"  v-model="inputNS" value="E" @change="filterByNS">
-                    {{ inputNS }}
+        <header>
+            <div class="filterContainer">
+                <h1>Cereals</h1>
+                <fieldset class="search">
+                    <legend>Rechercher</legend>
+                    <div class="search">
+                        <input type="search" v-model="inputSearch" placeholder="Nom de la céréale" id="inputSearch"
+                            @input="filterBrand">
+                    </div>
                 </fieldset>
+                <div class="nutriCat">
+                    <fieldset>
+                        <legend>Filter</legend>
+
+                        <div class="nutriScore">
+                            <fieldset>
+                                <legend>Nutriscore</legend>
+                                <label for="nutriscoreA">A</label>
+                                <input type="checkbox" v-model="inputNS" value="A" @change="filterByNS">
+                                <label for="nutriscoreB">B</label>
+                                <input type="checkbox" v-model="inputNS" value="B" @change="filterByNS">
+                                <label for="nutriscoreC">C</label>
+                                <input type="checkbox" v-model="inputNS" value="C" @change="filterByNS">
+                                <label for="nutriscoreD">D</label>
+                                <input type="checkbox" v-model="inputNS" value="D" @change="filterByNS">
+                                <label for="nutriscoreE">E</label>
+                                <input type="checkbox" v-model="inputNS" value="E" @change="filterByNS">
+
+                            </fieldset>
+                        </div>
+                        <div class="categories">
+                            <fieldset>
+                                <legend>Catégories</legend>
+                                <select id="categorie" v-model="inputCat" @change="filterByCat">
+                                    <option value="all">Tous</option>
+                                    <option value="sugarFree">Sans sucre</option>
+                                    <option value="lessSalt">Pauvre en sel</option>
+                                    <option value="booster">Boost</option>
+                                </select>
+                            </fieldset>
+                        </div>
+                    </fieldset>
+                </div>
             </div>
-            <div class="categories">
-                <fieldset>
-                    <legend>Catégories</legend>
-                    <select>
-                        <option value="">Tous</option>
-                        <option value="id" v-model="inputNS" @change="filterByNS">ID</option>
-                        <option value="name" v-model="inputNS" @change="filterByNS">Nom</option>
-                        <option value="calories" v-model="inputNS" @change="filterByNS">Calories</option>
-                        <option value="protein" v-model="inputNS" @change="filterByNS">Proteïnes</option>
-                        <option value="sodium" v-model="inputNS" @change="filterByNS">Sel</option>
-                        <option value="fiber" v-model="inputNS" @change="filterByNS">Fibres</option>
-                        <option value="carbo" v-model="inputNS" @change="filterByNS">Glucides</option>
-                        <option value="sugars" v-model="inputNS" @change="filterByNS">Sucre</option>
-                        <option value="potass" v-model="inputNS" @change="filterByNS">Potassium</option>
-                        <option value="vitamins" v-model="inputNS" @change="filterByNS">Vitamines</option>
-                        <option value="rating" v-model="inputNS" @change="filterByNS">Evaluation</option>
-                    </select>
-                </fieldset>
-            </div>
-        </fieldset>
-    </header>
+        </header>
 
-    <main>
+        <main>
+            <table>
+                <thead>
+                    <tr>
+                        <th id="id" @click="sortBrand">ID</th>
+                        <th id="name" @click="sortBrand">Nom</th>
+                        <th id="calories" @click="sortBrand">Calories</th>
+                        <th id="protein" @click="sortBrand">Proteïnes</th>
+                        <th id="sodium" @click="sortBrand">Sel</th>
+                        <th id="fiber" @click="sortBrand">Fibres</th>
+                        <th id="carbo" @click="sortBrand">Glucides</th>
+                        <th id="sugar" @click="sortBrand">Sucre</th>
+                        <th id="potass" @click="sortBrand">Potassium</th>
+                        <th id="vitamins" @click="sortBrand">Vitamines</th>
+                        <th id="rating" @click="sortBrand">Evaluation</th>
+                        <th>NS</th>
+                        <th>DEL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="cerealBrand of nutriTabBis">
+                        <td class="id">{{ cerealBrand.id }}</td>
+                        <td class="name">{{ cerealBrand.name }}</td>
+                        <td>{{ cerealBrand.calories }}</td>
+                        <td>{{ cerealBrand.protein }}</td>
+                        <td>{{ cerealBrand.sodium }}</td>
+                        <td>{{ cerealBrand.fiber }}</td>
+                        <td>{{ cerealBrand.carbo }}</td>
+                        <td>{{ cerealBrand.sugars }}</td>
+                        <td>{{ cerealBrand.potass }}</td>
+                        <td>{{ cerealBrand.vitamins }}</td>
+                        <td>{{ cerealBrand.rating }}</td>
+                        <td :class="cerealBrand.ns">{{ cerealBrand.ns }}</td>
+                        <td id="del" @click="deleteBrand">X</td>
 
-        <table>
-            <thead>
-                <tr>
-                    <th id="id" @click="sortBrand">ID</th>
-                    <th id="name" @click="sortBrand">Nom</th>
-                    <th id="calories" @click="sortBrand">Calories</th>
-                    <th id="protein" @click="sortBrand">Proteïnes</th>
-                    <th id="sodium" @click="sortBrand">Sel</th>
-                    <th id="fiber" @click="sortBrand">Fibres</th>
-                    <th id="carbo" @click="sortBrand">Glucides</th>
-                    <th id="sugar" @click="sortBrand">Sucre</th>
-                    <th id="potass" @click="sortBrand">Potassium</th>
-                    <th id="vitamins" @click="sortBrand">Vitamines</th>
-                    <th id="rating" @click="sortBrand">Evaluation</th>
-                    <th>NS</th>
-                    <th>DEL</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="cerealBrand of nutriTabBis">
-                    <td>{{ cerealBrand.id }}</td>
-                    <td>{{ cerealBrand.name }}</td>
-                    <td>{{ cerealBrand.calories }}</td>
-                    <td>{{ cerealBrand.protein }}</td>
-                    <td>{{ cerealBrand.sodium }}</td>
-                    <td>{{ cerealBrand.fiber }}</td>
-                    <td>{{ cerealBrand.carbo }}</td>
-                    <td>{{ cerealBrand.sugars }}</td>
-                    <td>{{ cerealBrand.potass }}</td>
-                    <td>{{ cerealBrand.vitamins }}</td>
-                    <td>{{ cerealBrand.rating }}</td>
-                    <td>{{ cerealBrand.ns }}</td>
-                    <td id="del" @click="deleteBrand">X</td>
-                    <!-- ICI surement mettre le bouton @click DELETE -->
-                </tr>
-            </tbody>
-        </table>
-
-    </main>
-</div>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
 </body>
 
 </html>

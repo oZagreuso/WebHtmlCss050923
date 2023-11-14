@@ -9,7 +9,8 @@ const app =
             asc: true,
             inputSearch: '',
             inputNS: [],
-            nutriCheck: []
+            nutriCheck: [],
+            inputCat: ''
 
         }
     },
@@ -24,6 +25,7 @@ const app =
             this.nutriTab[i] = new CerealBrand(this.nutriTab[i]);
             // console.log(this.nutriTab[i]);
         }
+        this.nutriTab.sort();
 
         this.nutriTabBis = [...this.nutriTab]; //spread opérateur : copie chaque élément dans un nouveau tableau
         console.log(this.nutriTabBis);
@@ -62,7 +64,7 @@ const app =
             this.nutriTabBis = this.nutriTab.filter(cerealBrand => cerealBrand.name.toLowerCase().includes((this.inputSearch.toLowerCase()).trim()));
         },
 
-        filterByNS() {     
+        filterByNS() {
             if (this.inputNS.length > 0) {
                 this.nutriTabBis = this.nutriTab.filter(cerealBrand => this.inputNS.includes(cerealBrand.ns));
             }
@@ -72,30 +74,33 @@ const app =
         },
 
         filterByCat() {
-            if (this.inputNS.length > 0) {
-                this.nutriTabBis = this.nutriTab.filter(cerealBrand => cerealBrand.name.includes(this.inputCat));
+            if (this.inputCat == 'sugarFree') {
+                this.nutriTabBis = this.nutriTabBis.filter(cerealBrand => cerealBrand.sugars < 1 && cerealBrand.sugar != -1);
             }
-
+            else if (this.inputCat == 'lessSalt') {
+                this.nutriTabBis = this.nutriTabBis.filter(cerealBrand => cerealBrand.sodium < 50);
+            }
+            else if (this.inputCat == 'booster') {
+                this.nutriTabBis = this.nutriTabBis.filter(cerealBrand => cerealBrand.vitamins >= 25 && cerealBrand.fiber >= 10);
+            }
+            else {
+                this.nutriTabBis = this.nutriTab;
+            }
         },
+
 
         deleteBrand(event) {
 
             let brandId = event.target.id;
             this.nutriTabBis.splice(brandId, 1);
+        },
+
+        totalBrand() {
+            return this.nutriTabBis.length;
         }
-
-    
-            /*const idCereal = event.target.dataset.id;
-            this.cereals = this.cereals.filter(cereal => cereal.id != idCereal);
-        }*/
-    
-        
-
-
-
-
     }
 }
+
 
 
 
